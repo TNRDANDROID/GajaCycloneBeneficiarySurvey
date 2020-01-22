@@ -32,6 +32,16 @@ public class GajaCycloneBeneficiarySurvey {
     private String personAlive;
     private String buttonText;
 
+    public String getSurveyRegId() {
+        return surveyRegId;
+    }
+
+    public void setSurveyRegId(String surveyRegId) {
+        this.surveyRegId = surveyRegId;
+    }
+
+    private String surveyRegId;
+
     public String getButtonText() {
         return buttonText;
     }

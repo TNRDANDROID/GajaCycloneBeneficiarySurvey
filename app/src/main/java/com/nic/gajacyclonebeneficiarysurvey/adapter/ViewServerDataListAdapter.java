@@ -132,6 +132,7 @@ public class ViewServerDataListAdapter extends RecyclerView.Adapter<ViewServerDa
         Intent intent = new Intent(activity, FullImageActivity.class);
         intent.putExtra(AppConstant.PV_CODE, serverDataListValuesFiltered.get(pos).getPvCode());
         intent.putExtra(AppConstant.HAB_CODE, serverDataListValuesFiltered.get(pos).getHabCode());
+        intent.putExtra(AppConstant.SURVEY_REG_ID, serverDataListValuesFiltered.get(pos).getSurveyRegId());
         activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

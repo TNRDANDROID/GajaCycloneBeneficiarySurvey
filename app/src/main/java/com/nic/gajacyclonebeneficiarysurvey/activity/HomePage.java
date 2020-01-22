@@ -272,8 +272,9 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
 
     public void villageFilterSpinner(String filterVillage) {
         Cursor VillageList = null;
-        VillageList = db.rawQuery("SELECT * FROM " + DBHelper.VILLAGE_TABLE_NAME + " where dcode = "+prefManager.getDistrictCode()+ " and bcode = '" + filterVillage + "'", null);
-
+        String VillageQuery = "SELECT * FROM " + DBHelper.VILLAGE_TABLE_NAME + " where dcode = "+prefManager.getDistrictCode()+ " and bcode = '" + filterVillage + "' order by pvname asc";
+        VillageList = db.rawQuery(VillageQuery, null);
+        Log.d("Village",""+VillageQuery);
         Village.clear();
         GajaCycloneBeneficiarySurvey villageListValue = new GajaCycloneBeneficiarySurvey();
         villageListValue.setPvName("Select Village");
@@ -615,6 +616,7 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
                             pmaySurvey.setPvCode(jsonArray.getJSONObject(i).getString(AppConstant.PV_CODE));
                             pmaySurvey.setHabCode(jsonArray.getJSONObject(i).getString(AppConstant.HAB_CODE));
                             pmaySurvey.setBeneficiaryName(jsonArray.getJSONObject(i).getString(AppConstant.BENEFICIARY_NAME));
+                            pmaySurvey.setSurveyRegId(jsonArray.getJSONObject(i).getString(AppConstant.SURVEY_REG_ID));
                             pmaySurvey.setHabitationName(jsonArray.getJSONObject(i).getString(AppConstant.HABITATION_NAME));
                             pmaySurvey.setPvName(jsonArray.getJSONObject(i).getString(AppConstant.PV_NAME));
                             pmaySurvey.setPersonAlive(jsonArray.getJSONObject(i).getString(AppConstant.PERSON_ALIVE));

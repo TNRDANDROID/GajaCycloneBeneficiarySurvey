@@ -45,7 +45,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + "pvcode  TEXT," +
                 "habcode  TEXT," +
                 "beneficiary_name  TEXT," +
-                "secc_id  TEXT," +
+                "survey_reg_id  TEXT," +
                 "habitation_name TEXT," +
                 "person_alive TEXT," +
                 "legal_heir_available TEXT," +
@@ -60,7 +60,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 "habcode TEXT," +
                 "pvname TEXT," +
                 "habitation_name TEXT," +
-                "secc_id TEXT," +
                 "beneficiary_name TEXT," +
                 "person_alive TEXT," +
                 "legal_heir_available TEXT," +

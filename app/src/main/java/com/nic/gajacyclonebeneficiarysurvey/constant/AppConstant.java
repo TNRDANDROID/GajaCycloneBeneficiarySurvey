@@ -12,7 +12,7 @@ public class AppConstant {
     public static String DATA_CONTENT = "data_content";
     public static String ENCODE_DATA = "enc_data";
 
-    public static String KEY_PMAY_SOURCE_ALL = "pmay_source_data";
+    public static String KEY_PMAY_SOURCE_ALL = "gaja_source_data";
 
 
     public static String USER_LOGIN_KEY = "user_login_key";
@@ -46,14 +46,15 @@ public class AppConstant {
     public static String BENEFICIARY_FATHER_NAME = "beneficiary_father_name";
     public static String HABITATION_NAME = "habitation_name";
     public static String SECC_ID = "secc_id";
+    public static String SURVEY_REG_ID = "survey_reg_id";
     public static String TYPE_OF_PHOTO = "type_of_photo";
     public static String KEY_LATITUDE = "latitude";
     public static String KEY_LONGITUDE = "longitude";
     public static String KEY_IMAGE = "image";
-    public static String PMAY_SOURCE_SAVE = "pmay_source_save";
+    public static String PMAY_SOURCE_SAVE = "gaja_source_save";
     public static String KEY_TRACK_DATA = "track_data";
     public static String PMAY_ID = "pmay_id";
-    public static String KEY_PMAY_SOURCE_DATA_PHOTO = "pmay_source_data_photo";
+    public static String KEY_PMAY_SOURCE_DATA_PHOTO = "gaja_source_data_photo";
     public static String PERSON_ALIVE = "person_alive";
     public static String LEGAL_HEIR_AVAILABLE = "legal_heir_available";
     public static String PERSON_MIGRATED = "person_migrated";

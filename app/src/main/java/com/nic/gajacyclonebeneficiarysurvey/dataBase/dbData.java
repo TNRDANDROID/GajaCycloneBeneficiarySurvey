@@ -145,6 +145,7 @@ public class dbData {
         values.put(AppConstant.PV_CODE, pmgsySurvey.getPvCode());
         values.put(AppConstant.HAB_CODE, pmgsySurvey.getHabCode());
         values.put(AppConstant.BENEFICIARY_NAME, pmgsySurvey.getBeneficiaryName());
+        values.put(AppConstant.SURVEY_REG_ID, pmgsySurvey.getSurveyRegId());
         values.put(AppConstant.HABITATION_NAME, pmgsySurvey.getHabitationName());
         values.put(AppConstant.PV_NAME, pmgsySurvey.getPvName());
         values.put(AppConstant.PERSON_ALIVE, pmgsySurvey.getPersonAlive());
@@ -183,6 +184,8 @@ public class dbData {
                             .getColumnIndexOrThrow(AppConstant.HAB_CODE)));
                     card.setBeneficiaryName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.BENEFICIARY_NAME)));
+                    card.setSurveyRegId(cursor.getString(cursor
+                            .getColumnIndexOrThrow(AppConstant.SURVEY_REG_ID)));
                     card.setHabitationName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.HABITATION_NAME)));
                     card.setPvName(cursor.getString(cursor

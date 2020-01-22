@@ -108,7 +108,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.nic.PMAYSurvey.provider"
+            android:authorities="com.nic.gajacyclonebeneficiarysurvey.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

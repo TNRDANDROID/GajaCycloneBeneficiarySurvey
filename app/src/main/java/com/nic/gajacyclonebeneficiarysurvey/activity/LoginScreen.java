@@ -302,7 +302,16 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
+//                                if(prefManager.getDistrictCode().equalsIgnoreCase("13")
+//                                        ||prefManager.getDistrictCode().equalsIgnoreCase("14")
+//                                        ||prefManager.getDistrictCode().equalsIgnoreCase("15")
+//                                        ||prefManager.getDistrictCode().equalsIgnoreCase("19")){
+//                                    showHomeScreen();
+//                                }else{
+//                                    Utils.showAlert(LoginScreen.this,"You are not authorised to use this app!");
+//                                }
                                 showHomeScreen();
+
                             }
                         }, 1000);
 
