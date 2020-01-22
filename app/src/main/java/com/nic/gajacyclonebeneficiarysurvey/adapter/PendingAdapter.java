@@ -75,7 +75,6 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.MyViewHo
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.pendingAdapterBinding.habName.setText(pendingListValues.get(position).getHabitationName());
         holder.pendingAdapterBinding.villageName.setText(pendingListValues.get(position).getPvName());
-        holder.pendingAdapterBinding.secId.setText(pendingListValues.get(position).getSeccId());
         holder.pendingAdapterBinding.name.setText(pendingListValues.get(position).getBeneficiaryName());
         if(!pendingListValues.get(position).getPersonAlive().equalsIgnoreCase("")){
             holder.pendingAdapterBinding.aliveLayout.setVisibility(View.VISIBLE);
@@ -178,7 +177,6 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.MyViewHo
         String habcode = pendingListValues.get(position).getHabCode();
         String beneficiary_name = pendingListValues.get(position).getBeneficiaryName();
         String father_name = pendingListValues.get(position).getFatherName();
-        String secc_id = pendingListValues.get(position).getSeccId();
         String person_alive = pendingListValues.get(position).getPersonAlive();
         String legal_heir_available = pendingListValues.get(position).getIsLegel();
         String person_migrated = pendingListValues.get(position).getIsMigrated();
@@ -197,7 +195,6 @@ public class PendingAdapter extends RecyclerView.Adapter<PendingAdapter.MyViewHo
             dataset.put(AppConstant.PERSON_ALIVE, person_alive);
             dataset.put(AppConstant.LEGAL_HEIR_AVAILABLE, legal_heir_available);
             dataset.put(AppConstant.PERSON_MIGRATED, person_migrated);
-            dataset.put(AppConstant.SECC_ID, secc_id);
         } catch (JSONException e) {
             e.printStackTrace();
         }

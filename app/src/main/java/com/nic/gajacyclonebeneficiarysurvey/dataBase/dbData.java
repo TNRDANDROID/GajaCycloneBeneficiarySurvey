@@ -145,7 +145,6 @@ public class dbData {
         values.put(AppConstant.PV_CODE, pmgsySurvey.getPvCode());
         values.put(AppConstant.HAB_CODE, pmgsySurvey.getHabCode());
         values.put(AppConstant.BENEFICIARY_NAME, pmgsySurvey.getBeneficiaryName());
-        values.put(AppConstant.SECC_ID, pmgsySurvey.getSeccId());
         values.put(AppConstant.HABITATION_NAME, pmgsySurvey.getHabitationName());
         values.put(AppConstant.PV_NAME, pmgsySurvey.getPvName());
         values.put(AppConstant.PERSON_ALIVE, pmgsySurvey.getPersonAlive());
@@ -184,8 +183,6 @@ public class dbData {
                             .getColumnIndexOrThrow(AppConstant.HAB_CODE)));
                     card.setBeneficiaryName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.BENEFICIARY_NAME)));
-                    card.setSeccId(cursor.getString(cursor
-                            .getColumnIndexOrThrow(AppConstant.SECC_ID)));
                     card.setHabitationName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.HABITATION_NAME)));
                     card.setPvName(cursor.getString(cursor
@@ -242,8 +239,6 @@ public class dbData {
                             .getColumnIndexOrThrow(AppConstant.PV_NAME)));
                     card.setHabitationName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.HABITATION_NAME)));
-                    card.setSeccId(cursor.getString(cursor
-                            .getColumnIndexOrThrow(AppConstant.SECC_ID)));
                     card.setBeneficiaryName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.BENEFICIARY_NAME)));
                     card.setFatherName(cursor.getString(cursor
@@ -291,8 +286,6 @@ public class dbData {
                             .getColumnIndexOrThrow(AppConstant.PV_NAME)));
                     card.setHabitationName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.HABITATION_NAME)));
-                    card.setSeccId(cursor.getString(cursor
-                            .getColumnIndexOrThrow(AppConstant.SECC_ID)));
                     card.setBeneficiaryName(cursor.getString(cursor
                             .getColumnIndexOrThrow(AppConstant.BENEFICIARY_NAME)));
                     card.setFatherName(cursor.getString(cursor

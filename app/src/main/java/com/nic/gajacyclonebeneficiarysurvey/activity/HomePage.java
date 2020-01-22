@@ -464,27 +464,18 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
             if (!"Select Habitation".equalsIgnoreCase(Habitation.get(homeScreenBinding.habitationSpinner.getSelectedItemPosition()).getHabitationName())) {
                 if (!homeScreenBinding.name.getText().toString().isEmpty()) {
                     if (!homeScreenBinding.fatherName.getText().toString().isEmpty()) {
-                        if (!homeScreenBinding.seccId.getText().toString().isEmpty()) {
-                            if (Utils.isValidMobile(homeScreenBinding.seccId.getText().toString())) {
-                                if ((homeScreenBinding.aliveYes.isChecked()) || homeScreenBinding.aliveNo.isChecked()) {
-                                    if (isAlive.equalsIgnoreCase("N")) {
-                                        if ((homeScreenBinding.legalYes.isChecked()) || homeScreenBinding.legalNo.isChecked()) {
-                                            checkLegalYesNo();
-                                        } else {
-                                            Utils.showAlert(this, "Check the beneficiary legal heir is available or not!");
-                                        }
-                                    } else {
-                                        checkLegalYesNo();
-                                    }
+                        if ((homeScreenBinding.aliveYes.isChecked()) || homeScreenBinding.aliveNo.isChecked()) {
+                            if (isAlive.equalsIgnoreCase("N")) {
+                                if ((homeScreenBinding.legalYes.isChecked()) || homeScreenBinding.legalNo.isChecked()) {
+                                    checkLegalYesNo();
                                 } else {
-                                    Utils.showAlert(this, "Check the beneficiary is alive or not!");
+                                    Utils.showAlert(this, "Check the beneficiary legal heir is available or not!");
                                 }
-
                             } else {
-                                Utils.showAlert(this, "Seec Id Must be 7 Digit!");
+                                checkLegalYesNo();
                             }
                         } else {
-                            Utils.showAlert(this, "Enter the  Seec Id!");
+                            Utils.showAlert(this, "Check the beneficiary is alive or not!");
                         }
                     } else {
                         Utils.showAlert(this, "Enter the Father/Husband Name!");
@@ -520,7 +511,6 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
         String habcode = Habitation.get(homeScreenBinding.habitationSpinner.getSelectedItemPosition()).getHabCode();
         String beneficiary_name = homeScreenBinding.name.getText().toString();
         String father_name = homeScreenBinding.fatherName.getText().toString();
-        String secc_id = homeScreenBinding.seccId.getText().toString();
 
         ContentValues registerValue = new ContentValues();
         registerValue.put(AppConstant.DISTRICT_CODE, prefManager.getDistrictCode());
@@ -531,7 +521,6 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
         registerValue.put(AppConstant.HABITATION_NAME, Habitation.get(homeScreenBinding.habitationSpinner.getSelectedItemPosition()).getHabitationName());
         registerValue.put(AppConstant.BENEFICIARY_NAME, beneficiary_name);
         registerValue.put(AppConstant.BENEFICIARY_FATHER_NAME, father_name);
-        registerValue.put(AppConstant.SECC_ID, secc_id);
         registerValue.put(AppConstant.PERSON_ALIVE, isAlive);
         registerValue.put(AppConstant.LEGAL_HEIR_AVAILABLE, isLegal);
         registerValue.put(AppConstant.PERSON_MIGRATED, isMigrated);
@@ -586,7 +575,6 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
         homeScreenBinding.habitationSpinner.setSelection(0);
         homeScreenBinding.fatherName.setText("");
         homeScreenBinding.name.setText("");
-        homeScreenBinding.seccId.setText("");
         homeScreenBinding.aliveYes.setChecked(false);
         homeScreenBinding.aliveNo.setChecked(false);
         homeScreenBinding.legalYes.setChecked(false);
@@ -627,7 +615,6 @@ public class HomePage extends AppCompatActivity implements Api.ServerResponseLis
                             pmaySurvey.setPvCode(jsonArray.getJSONObject(i).getString(AppConstant.PV_CODE));
                             pmaySurvey.setHabCode(jsonArray.getJSONObject(i).getString(AppConstant.HAB_CODE));
                             pmaySurvey.setBeneficiaryName(jsonArray.getJSONObject(i).getString(AppConstant.BENEFICIARY_NAME));
-                            pmaySurvey.setSeccId(jsonArray.getJSONObject(i).getString(AppConstant.SECC_ID));
                             pmaySurvey.setHabitationName(jsonArray.getJSONObject(i).getString(AppConstant.HABITATION_NAME));
                             pmaySurvey.setPvName(jsonArray.getJSONObject(i).getString(AppConstant.PV_NAME));
                             pmaySurvey.setPersonAlive(jsonArray.getJSONObject(i).getString(AppConstant.PERSON_ALIVE));

@@ -19,7 +19,6 @@ import com.nic.gajacyclonebeneficiarysurvey.constant.AppConstant;
 import com.nic.gajacyclonebeneficiarysurvey.databinding.ViewServerDataAdapterBinding;
 import com.nic.gajacyclonebeneficiarysurvey.model.GajaCycloneBeneficiarySurvey;
 import com.nic.gajacyclonebeneficiarysurvey.utils.Utils;
-import com.nic.gajacyclonebeneficiarysurvey.model.GajaCycloneBeneficiarySurvey;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +64,6 @@ public class ViewServerDataListAdapter extends RecyclerView.Adapter<ViewServerDa
         holder.viewServerDataAdapterBinding.name.setText(serverDataListValuesFiltered.get(position).getBeneficiaryName());
         holder.viewServerDataAdapterBinding.villageName.setText(serverDataListValuesFiltered.get(position).getPvName());
         holder.viewServerDataAdapterBinding.habName.setText(serverDataListValuesFiltered.get(position).getHabitationName());
-        holder.viewServerDataAdapterBinding.secId.setText(serverDataListValuesFiltered.get(position).getSeccId());
         if(!serverDataListValuesFiltered.get(position).getPersonAlive().equalsIgnoreCase("")){
             holder.viewServerDataAdapterBinding.aliveLayout.setVisibility(View.VISIBLE);
             holder.viewServerDataAdapterBinding.aliveView.setVisibility(View.VISIBLE);
@@ -108,7 +106,7 @@ public class ViewServerDataListAdapter extends RecyclerView.Adapter<ViewServerDa
 
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name or phone number match
-                        if (row.getSeccId().toLowerCase().contains(charString.toLowerCase()) || row.getBeneficiaryName().contains(charString.toUpperCase())) {
+                        if (row.getBeneficiaryName().contains(charString.toUpperCase())) {
                             filteredList.add(row);
                         }
                     }
@@ -134,7 +132,6 @@ public class ViewServerDataListAdapter extends RecyclerView.Adapter<ViewServerDa
         Intent intent = new Intent(activity, FullImageActivity.class);
         intent.putExtra(AppConstant.PV_CODE, serverDataListValuesFiltered.get(pos).getPvCode());
         intent.putExtra(AppConstant.HAB_CODE, serverDataListValuesFiltered.get(pos).getHabCode());
-        intent.putExtra(AppConstant.SECC_ID, serverDataListValuesFiltered.get(pos).getSeccId());
         activity.startActivity(intent);
         activity.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

@@ -100,17 +100,6 @@ public class GajaCycloneBeneficiarySurvey {
         HabitationName = habitationName;
     }
 
-    public String getSeccId() {
-        return SeccId;
-    }
-
-    public void setSeccId(String seccId) {
-        SeccId = seccId;
-    }
-
-    private String SeccId;
-
-
     private String PvCode;
     private String PvName;
 
